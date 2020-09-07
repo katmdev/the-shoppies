@@ -1,3 +1,7 @@
+## The Shoppies
+
+This is a React App created for the [Shopify UX Developer Intern & Web Developer Intern Challenge - Winter 2021](https://docs.google.com/document/d/1AZO0BZwn1Aogj4f3PDNe1mhq8pKsXZxtrG--EIbP_-w/edit#heading=h.31w9woubunro)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
