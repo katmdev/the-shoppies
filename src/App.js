@@ -17,7 +17,6 @@ function App() {
       async function fetchData() {
         if (searchTerm.length > 1) {
           const response = await axiosCall(searchTerm);
-          console.log(response);
           if (response.Search) {
             setSearchResults(response.Search);
             setError("");
@@ -46,7 +45,9 @@ function App() {
         <Results
           searchTerm={searchTerm} 
           searchResults={searchResults} 
-          error={error}
+          error={error} 
+          setNominations={setNominations}
+          nominations={nominations}
         />
         <Nominations/>
         <AllNominations/>
