@@ -8,6 +8,7 @@ const Results = ({ searchTerm, searchResults, error, setNominations, nominations
         } else {
             const updatedNominations = [...nominations, newNomination]
             setNominations(updatedNominations);
+            localStorage.setItem('nominations', JSON.stringify(updatedNominations));
         }
     };
 
@@ -17,7 +18,8 @@ const Results = ({ searchTerm, searchResults, error, setNominations, nominations
 
     return (
         <section className="results">
-            <h2>{ error ? `${error}` : `Results for "${searchTerm}"` }</h2>
+            <h2>Results</h2>
+            <p>{error ? `${error}` : `Results for "${searchTerm}"`}</p>
             <ul>
                 {searchResults.map(result => {
                     return (

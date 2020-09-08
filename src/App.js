@@ -4,14 +4,13 @@ import Search from './components/Search.js';
 import Results from './components/Results.js';
 import Nominations from './components/Nominations.js';
 import AllNominations from './components/AllNominations.js';
-import { AppProvider, Banner } from '@shopify/polaris';
-import '@shopify/polaris/dist/styles.css';
+import './App.css';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
-  const [error, setError] = useState("Enter a search term");
-  const [nominations, setNominations] = useState([]);
+  const [error, setError] = useState("Please enter a search term");
+  const [nominations, setNominations] = useState(JSON.parse(localStorage.getItem("nominations")));
   const [allNominations, setAllNominations] = useState([]);
 
     useEffect(() => {
@@ -27,7 +26,7 @@ function App() {
           }
         } else {
           setSearchResults([]);
-          setError("Enter a search term");
+          setError("Please enter a search term");
         }
       }
       fetchData();
@@ -35,15 +34,14 @@ function App() {
 
   return (
     <div className="App">
-      <AppProvider>
       <header className="App-header">
         <h1>The Shoppies</h1>
-      </header>
-      <main>
         <Search 
           searchTerm={searchTerm} 
           setSearchTerm={setSearchTerm}
         />
+      </header>
+      <main>
         <Results
           searchTerm={searchTerm} 
           searchResults={searchResults} 
@@ -55,9 +53,8 @@ function App() {
           setNominations={setNominations} 
           nominations={nominations}
         />
-        <AllNominations/>
+        {/* <AllNominations/> */}
       </main>
-      </AppProvider>
     </div>
   );
 }

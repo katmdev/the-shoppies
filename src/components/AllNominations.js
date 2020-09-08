@@ -1,8 +1,11 @@
 import React from 'react';
+import Nominations from './Nominations';
 
 const AllNominations = () => {
     return (
-        <h1>All Nominations</h1>
+        <section className="allNominations">
+            <h2>All Nominations</h2>
+        </section>
     )
 };
 
