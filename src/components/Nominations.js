@@ -1,7 +1,10 @@
 import React from 'react';
 
 const Nominations = ({nominations, setNominations}) => {
-    const handleDelete = () => {};
+    const handleDelete = (removedNomination) => {
+        const newNominations = nominations.filter((nomination) => nomination !== removedNomination);
+        setNominations(newNominations);
+    };
     return (
         <section className="nominations">
         <h2>Nominations</h2>
