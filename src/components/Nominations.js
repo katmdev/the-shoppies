@@ -3,7 +3,7 @@ import React from 'react';
 const Nominations = ({nominations, setNominations}) => {
     const handleDelete = (removedNomination) => {
         const newNominations = nominations.filter((nomination) => nomination !== removedNomination);
-        setNominations(newNominations);
+        setNominations(newNominations)
     };
     return (
         <section className="nominations">
@@ -17,8 +17,8 @@ const Nominations = ({nominations, setNominations}) => {
                                 Remove
                             </button>
                         </li>
-                    );
-                })};
+                    )
+                })}
              </ul>
         </section>
     )

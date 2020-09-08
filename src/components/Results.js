@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Results = ({ searchTerm, searchResults, error, setNominations, nominations }) => {
-
     const handleNomination = (newNomination) => {
         if (nominations.length === 5) {
             alert("You can only nominate 5 films")

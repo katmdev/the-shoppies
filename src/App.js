@@ -10,7 +10,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [error, setError] = useState("Please enter a search term");
-  const [nominations, setNominations] = useState(JSON.parse(localStorage.getItem("nominations")));
+  const [nominations, setNominations] = useState([]);
   // const [allNominations, setAllNominations] = useState([]);
 
     useEffect(() => {
