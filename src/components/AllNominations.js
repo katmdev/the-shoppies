@@ -1,7 +1,7 @@
 import React from 'react';
-import Nominations from './Nominations';
+import { addToFireStore } from '../lib/firebase'
 
-const AllNominations = () => {
+const AllNominations = ({setAllNominations, allNominations}) => {
     return (
         <section className="allNominations">
             <h2>All Nominations</h2>

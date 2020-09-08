@@ -13,5 +13,10 @@ const firebaseConfig = {
 
 let fb = firebase.initializeApp(firebaseConfig);
 let db = firebase.firestore();
+let dbRef = db.collection("nominations");
 
-export { fb, db };
+const addToFirestore = (options = {}) => {
+  dbRef.add(options);
+}
+
+export { fb, db, addToFirestore };

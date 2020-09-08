@@ -3,7 +3,7 @@ import { axiosCall } from './lib/axios.js';
 import Search from './components/Search.js';
 import Results from './components/Results.js';
 import Nominations from './components/Nominations.js';
-import AllNominations from './components/AllNominations.js';
+// import AllNominations from './components/AllNominations.js';
 import './App.css';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [error, setError] = useState("Please enter a search term");
   const [nominations, setNominations] = useState(JSON.parse(localStorage.getItem("nominations")));
-  const [allNominations, setAllNominations] = useState([]);
+  // const [allNominations, setAllNominations] = useState([]);
 
     useEffect(() => {
       async function fetchData() {
@@ -53,7 +53,10 @@ function App() {
           setNominations={setNominations} 
           nominations={nominations}
         />
-        {/* <AllNominations/> */}
+        {/* <AllNominations
+          setAllNominations={setAllNominations}
+          allNominations={allNominations}
+        /> */}
       </main>
     </div>
   );
