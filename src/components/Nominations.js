@@ -1,8 +1,27 @@
 import React from 'react';
 
-const Nominations = () => {
+const Nominations = ({nominations, setNominations}) => {
+    const handleDelete = () => {};
     return (
-        <h1>Nominations</h1>
+        <section className="nominations">
+        <h2>Nominations</h2>
+        <ul>
+            {nominations.map(nomination => {
+                return (
+                    <li
+                        key={nomination.imdbID}
+                    >
+                        {nomination.Title} ({nomination.Year})
+                        <button 
+                            onClick={() => handleDelete(nomination)}
+                        >
+                            Remove
+                        </button>
+                    </li>
+                );
+            })}
+        </ul>
+    </section>
     )
 };
 

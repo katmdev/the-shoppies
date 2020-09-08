@@ -4,7 +4,8 @@ import Search from './components/Search.js';
 import Results from './components/Results.js';
 import Nominations from './components/Nominations.js';
 import AllNominations from './components/AllNominations.js';
-import './App.css';
+import { AppProvider, Banner } from '@shopify/polaris';
+import '@shopify/polaris/dist/styles.css';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -34,6 +35,7 @@ function App() {
 
   return (
     <div className="App">
+      <AppProvider>
       <header className="App-header">
         <h1>The Shoppies</h1>
       </header>
@@ -49,9 +51,13 @@ function App() {
           setNominations={setNominations}
           nominations={nominations}
         />
-        <Nominations/>
+        <Nominations
+          setNominations={setNominations} 
+          nominations={nominations}
+        />
         <AllNominations/>
       </main>
+      </AppProvider>
     </div>
   );
 }
